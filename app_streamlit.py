@@ -37,5 +37,7 @@ if st.button("Prediksi Nilai TKA"):
     )
 
     prediksi = model.predict(data_baru)
+    prediksi = prediksi.clip(0,100)
+
 
     st.success(f"📊 Prediksi Nilai TKA: **{prediksi[0]:.0f}**")
